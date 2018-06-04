@@ -1,0 +1,14 @@
+image: "dipsatch/test-app"
+namespace: "test-app"
+limits:
+  memory: "1500Mi"
+  cpu: 1
+autoscale:
+  targetCpuPercent: 75
+  minReplicas: 1
+  maxReplicas: 4
+ports:
+  - port: 80:8080
+command: "java -XX:+UseG1GC -XX:NewRatio=1 -Xmx1500m -Xms1500m -Dspring.profiles.active=dev -jar app.jar"
+environment:
+  PORT: 8080
