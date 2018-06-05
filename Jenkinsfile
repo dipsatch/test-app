@@ -13,6 +13,9 @@ node {
         sh 'mvn versions:set -DnewVersion=$VERSION'
         sh 'mvn compile'
     }
+
+    stage 'Run K8s'
+    sh 'kubectl get pods'
   } catch(Exception e){
       throw e;
   }
