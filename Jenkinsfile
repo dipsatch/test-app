@@ -13,5 +13,7 @@ node {
         sh 'mvn versions:set -DnewVersion=$VERSION'
         sh 'mvn compile'
     }
+  } catch(Exception e){
+      throw e;
   }
 }
