@@ -1,4 +1,5 @@
 #!groovy
+#test
 
 env.GIT_REPO='https://github.com/dipsatch/test-app.git'
 env.VERSION='0.0.1.' + env.BUILD_NUMBER + '.' + env.BRANCH_NAME + '-SNAPSHOT'
